@@ -6,11 +6,7 @@
 <title>Shadow | Official</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle at top, #1a1a1a, #0a0a0a 70%);
@@ -18,739 +14,316 @@ body {
     text-align: center;
     overflow-x: hidden;
 }
-
-/* NAVIGATION BAR */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(20, 20, 20, 0.95);
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(20,20,20,0.95);
     backdrop-filter: blur(10px);
     padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
     z-index: 1001;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: #5865F2;
-}
-.auth-section {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
+.logo { font-size: 24px; font-weight: 800; color: #5865F2; }
+.auth-section { display: flex; gap: 15px; align-items: center; }
 .user-display {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(88, 101, 242, 0.2);
-    padding: 8px 20px;
-    border-radius: 50px;
-    border: 2px solid rgba(88, 101, 242, 0.3);
-    cursor: pointer;
-    transition: 0.3s ease;
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(88,101,242,0.2);
+    padding: 8px 20px; border-radius: 50px;
+    border: 2px solid rgba(88,101,242,0.3);
+    cursor: pointer; transition: 0.3s ease;
 }
-.user-display:hover {
-    background: rgba(88, 101, 242, 0.3);
-    transform: translateY(-2px);
-}
-.user-icon {
-    font-size: 24px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-}
-.username {
-    font-weight: 600;
-    color: #5865F2;
-}
+.user-display:hover { background: rgba(88,101,242,0.3); transform: translateY(-2px); }
+.user-icon { font-size: 24px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; }
+.username { font-weight: 600; color: #5865F2; }
+.admin-username { font-weight: 600; color: #ff4500; }
 .nav-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-    font-size: 14px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white; padding: 8px 20px; border-radius: 50px;
+    cursor: pointer; font-weight: 600; transition: 0.3s ease; font-size: 14px;
 }
-.nav-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-.nav-btn.primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-}
-.nav-btn.primary:hover {
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-}
-.nav-btn.chat {
-    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
-    border: none;
-}
-.nav-btn.chat:hover {
-    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
-}
-.logout-btn {
-    background: rgba(255, 0, 0, 0.2);
-    border-color: rgba(255, 0, 0, 0.3);
-}
-.logout-btn:hover {
-    background: rgba(255, 0, 0, 0.3);
-}
-
-/* HERO SECTION */
-.hero {
-    padding: 180px 20px 80px;
-    max-width: 900px;
-    margin: auto;
-}
-.hero h1 {
-    font-size: 60px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-.hero p {
-    font-size: 20px;
-    color: #bbbbbb;
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-.highlight {
-    color: #5865F2;
-    font-weight: 600;
-}
-
-/* BUTTONS */
-.buttons {
-    margin-top: 20px;
-}
+.nav-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.nav-btn.primary { background: linear-gradient(135deg,#667eea,#764ba2); border: none; }
+.nav-btn.chat { background: linear-gradient(135deg,#00d4ff,#0099ff); border: none; }
+.nav-btn.admin-btn { background: linear-gradient(135deg,#ff4500,#cc0000); border: none; }
+.nav-btn.admin-btn:hover { box-shadow: 0 5px 15px rgba(255,69,0,0.5); }
+.logout-btn { background: rgba(255,0,0,0.2); border-color: rgba(255,0,0,0.3); }
+.hero { padding: 180px 20px 80px; max-width: 900px; margin: auto; }
+.hero h1 { font-size: 60px; font-weight: 800; margin-bottom: 20px; }
+.hero p { font-size: 20px; color: #bbb; line-height: 1.8; margin-bottom: 40px; }
+.highlight { color: #5865F2; font-weight: 600; }
+.buttons { margin-top: 20px; }
 .btn {
-    display: inline-block;
-    padding: 15px 35px;
-    margin: 10px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
+    display: inline-block; padding: 15px 35px; margin: 10px;
+    border-radius: 50px; text-decoration: none; font-weight: 600;
+    transition: 0.3s ease; font-size: 16px; cursor: pointer; border: none;
 }
-.discord {
-    background: #5865F2;
-    color: white;
-}
-.youtube {
-    background: #FF0000;
-    color: white;
-}
-.game {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-.btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* ABOUT SECTION */
-.section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-.section p {
-    color: #aaa;
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-/* FOOTER */
-footer {
-    margin-top: 80px;
-    padding: 30px;
-    font-size: 14px;
-    color: #666;
-    border-top: 1px solid #222;
-}
-
-/* SMOOTH ANIMATION */
-.fade-in {
-    animation: fade 1.2s ease forwards;
-    opacity: 0;
-}
-@keyframes fade {
-    to { opacity: 1; }
-}
+.discord { background: #5865F2; color: white; }
+.youtube { background: #FF0000; color: white; }
+.game { background: linear-gradient(135deg,#667eea,#764ba2); color: white; }
+.btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+.section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+.section h2 { font-size: 36px; margin-bottom: 20px; }
+.section p { color: #aaa; line-height: 1.8; font-size: 18px; }
+footer { margin-top: 80px; padding: 30px; font-size: 14px; color: #666; border-top: 1px solid #222; }
+.fade-in { animation: fade 1.2s ease forwards; opacity: 0; }
+@keyframes fade { to { opacity: 1; } }
 
 /* MODAL BASE */
 .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+    z-index: 2000; align-items: center; justify-content: center;
 }
-.modal-overlay.active {
-    display: flex;
-    animation: fade 0.3s ease forwards;
-}
+.modal-overlay.active { display: flex; animation: fade 0.3s ease forwards; }
 .modal {
-    background: #1a1a1a;
-    border: 2px solid rgba(102, 126, 234, 0.3);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 450px;
-    width: 90%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #1a1a1a; border: 2px solid rgba(102,126,234,0.3);
+    border-radius: 20px; padding: 40px; max-width: 450px; width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
-.modal h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #667eea;
-}
-.modal p {
-    color: #aaa;
-    margin-bottom: 30px;
-    font-size: 14px;
-}
-
-/* AUTH FORMS */
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #aaa;
-    font-size: 14px;
-    font-weight: 600;
-}
+.modal.admin-modal { border-color: rgba(255,69,0,0.5); max-width: 700px; }
+.modal h2 { font-size: 32px; margin-bottom: 10px; color: #667eea; }
+.modal h2.admin-title { color: #ff4500; }
+.modal p { color: #aaa; margin-bottom: 20px; font-size: 14px; }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; color: #aaa; font-size: 14px; font-weight: 600; }
 .form-group input {
-    width: 100%;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.3s ease;
+    width: 100%; padding: 12px 20px;
+    background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 10px; color: white; font-size: 16px;
+    font-family: 'Poppins', sans-serif; transition: 0.3s ease;
 }
-.form-group input:focus {
-    outline: none;
-    border-color: #667eea;
-    background: rgba(255, 255, 255, 0.08);
-}
-.error-message {
-    color: #ff4444;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
-}
-.error-message.show {
-    display: block;
-}
-.modal-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 30px;
-}
+.form-group input:focus { outline: none; border-color: #667eea; background: rgba(255,255,255,0.08); }
+.error-message { color: #ff4444; font-size: 14px; margin-top: 10px; display: none; }
+.error-message.show { display: block; }
+.success-message { color: #44ff88; font-size: 14px; margin-top: 10px; display: none; }
+.success-message.show { display: block; }
+.modal-buttons { display: flex; gap: 10px; margin-top: 20px; }
 .modal-btn {
-    flex: 1;
-    padding: 12px;
-    border-radius: 50px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-size: 16px;
+    flex: 1; padding: 12px; border-radius: 50px; border: none;
+    font-weight: 600; cursor: pointer; transition: 0.3s ease; font-size: 16px;
 }
-.modal-btn.primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-.modal-btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-}
-.modal-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-.modal-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-.switch-auth {
-    text-align: center;
-    margin-top: 20px;
-    color: #aaa;
-    font-size: 14px;
-}
-.switch-auth a {
-    color: #667eea;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 600;
-}
-.switch-auth a:hover {
-    text-decoration: underline;
-}
+.modal-btn.primary { background: linear-gradient(135deg,#667eea,#764ba2); color: white; }
+.modal-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102,126,234,0.5); }
+.modal-btn.secondary { background: rgba(255,255,255,0.1); color: white; }
+.modal-btn.secondary:hover { background: rgba(255,255,255,0.15); }
+.modal-btn.danger { background: linear-gradient(135deg,#ff4500,#cc0000); color: white; }
+.modal-btn.danger:hover { box-shadow: 0 5px 15px rgba(255,69,0,0.5); }
+.switch-auth { text-align: center; margin-top: 20px; color: #aaa; font-size: 14px; }
+.switch-auth a { color: #667eea; cursor: pointer; text-decoration: none; font-weight: 600; }
 
-/* PROFILE PICTURE SELECTOR */
-.avatar-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-}
+/* PROFILE AVATAR */
+.avatar-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; margin: 20px 0; }
 .avatar-option {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-    border: 3px solid transparent;
-    transition: 0.3s ease;
+    width: 50px; height: 50px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; cursor: pointer; background: rgba(255,255,255,0.1);
+    border: 3px solid transparent; transition: 0.3s ease;
 }
-.avatar-option:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
-}
-.avatar-option.selected {
-    border-color: #667eea;
-    background: rgba(102, 126, 234, 0.3);
-}
+.avatar-option:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); }
+.avatar-option.selected { border-color: #667eea; background: rgba(102,126,234,0.3); }
 
-/* CHAT SYSTEM */
+/* CHAT */
 .chat-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at top, #1a1a1a, #0a0a0a 70%);
-    z-index: 1500;
-    padding: 80px 20px 20px;
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top,#1a1a1a,#0a0a0a 70%);
+    z-index: 1500; padding: 80px 20px 20px;
 }
-.chat-container.active {
-    display: flex;
-    flex-direction: column;
-    animation: fade 0.3s ease forwards;
-}
+.chat-container.active { display: flex; flex-direction: column; animation: fade 0.3s ease forwards; }
 .chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 900px; width: 100%; margin: 0 auto 20px;
 }
-.chat-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #00d4ff;
-}
+.chat-title { font-size: 32px; font-weight: 800; color: #00d4ff; }
 .chat-close {
-    background: #333;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
+    background: #333; color: white; padding: 10px 25px;
+    border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s ease;
 }
-.chat-close:hover {
-    background: #444;
-    transform: translateY(-2px);
-}
+.chat-close:hover { background: #444; transform: translateY(-2px); }
 .chat-content {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    background: rgba(255, 255, 255, 0.03);
-    border: 2px solid rgba(0, 212, 255, 0.3);
-    border-radius: 20px;
-    overflow: hidden;
+    max-width: 900px; width: 100%; margin: 0 auto;
+    display: flex; flex-direction: column; flex: 1;
+    background: rgba(255,255,255,0.03); border: 2px solid rgba(0,212,255,0.3);
+    border-radius: 20px; overflow: hidden;
 }
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+.chat-messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
 .chat-message {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    transition: 0.3s ease;
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px; background: rgba(255,255,255,0.05);
+    border-radius: 12px; transition: 0.3s ease;
 }
-.chat-message:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
+.chat-message:hover { background: rgba(255,255,255,0.08); }
+.chat-message.system-msg { background: rgba(255,200,0,0.08); border: 1px solid rgba(255,200,0,0.2); }
 .message-avatar {
-    font-size: 32px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    font-size: 32px; width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0;
 }
-.message-content {
-    flex: 1;
-    text-align: left;
-}
-.message-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 5px;
-}
-.message-username {
-    font-weight: 700;
-    color: #00d4ff;
-    font-size: 14px;
-}
-.message-time {
-    color: #666;
-    font-size: 12px;
-}
-.message-text {
-    color: #ddd;
-    line-height: 1.5;
-    word-wrap: break-word;
-}
+.message-content { flex: 1; text-align: left; }
+.message-header { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+.message-username { font-weight: 700; color: #00d4ff; font-size: 14px; }
+.message-username.is-admin { color: #ff4500; }
+.message-time { color: #666; font-size: 12px; }
+.message-text { color: #ddd; line-height: 1.5; word-wrap: break-word; }
 .message-delete {
-    background: rgba(255, 0, 0, 0.2);
-    border: none;
-    color: #ff4444;
-    padding: 4px 12px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    flex-shrink: 0;
+    background: rgba(255,0,0,0.2); border: none; color: #ff4444;
+    padding: 4px 12px; border-radius: 50px; cursor: pointer;
+    font-size: 11px; font-weight: 600; transition: 0.3s ease; flex-shrink: 0;
 }
-.message-delete:hover {
-    background: rgba(255, 0, 0, 0.3);
-}
-.chat-input-area {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.chat-input-wrapper {
-    display: flex;
-    gap: 10px;
-}
+.message-delete:hover { background: rgba(255,0,0,0.3); }
+.chat-input-area { padding: 20px; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1); }
+.chat-input-wrapper { display: flex; gap: 10px; }
 .chat-input {
-    flex: 1;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    color: white;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.3s ease;
+    flex: 1; padding: 12px 20px;
+    background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 50px; color: white; font-size: 16px;
+    font-family: 'Poppins', sans-serif; transition: 0.3s ease;
 }
-.chat-input:focus {
-    outline: none;
-    border-color: #00d4ff;
-    background: rgba(255, 255, 255, 0.08);
-}
+.chat-input:focus { outline: none; border-color: #00d4ff; background: rgba(255,255,255,0.08); }
 .chat-send {
-    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
+    background: linear-gradient(135deg,#00d4ff,#0099ff); color: white; border: none;
+    padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s ease;
 }
-.chat-send:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
-}
-.chat-empty {
-    text-align: center;
-    color: #666;
-    padding: 40px;
-    font-size: 16px;
-}
+.chat-send:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,153,255,0.5); }
+.chat-empty { text-align: center; color: #666; padding: 40px; font-size: 16px; }
 
-/* CLICKER GAME STYLES */
+/* ADMIN KEY MODAL */
+.admin-key-modal { border-color: rgba(255,69,0,0.4); }
+.admin-key-modal h2 { color: #ff4500; }
+.admin-key-modal .form-group input:focus { border-color: #ff4500; }
+.admin-key-modal .modal-btn.primary { background: linear-gradient(135deg,#ff4500,#cc0000); }
+
+/* ADMIN PANEL */
+.admin-container {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at top,#1a0a0a,#0a0000 70%);
+    z-index: 1500; overflow-y: auto; padding: 100px 20px 40px;
+}
+.admin-container.active { display: block; animation: fade 0.3s ease forwards; }
+.admin-content { max-width: 900px; margin: auto; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.admin-title { font-size: 36px; font-weight: 800; color: #ff4500; }
+.admin-subtitle { color: #ff8866; font-size: 14px; margin-top: 5px; }
+.admin-tabs { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
+.admin-tab {
+    padding: 10px 25px; border-radius: 50px; border: 2px solid rgba(255,69,0,0.3);
+    background: rgba(255,69,0,0.1); color: #ff8866; cursor: pointer;
+    font-weight: 600; transition: 0.3s ease;
+}
+.admin-tab:hover, .admin-tab.active { background: rgba(255,69,0,0.3); border-color: rgba(255,69,0,0.6); color: white; }
+.admin-panel { display: none; }
+.admin-panel.active { display: block; }
+.admin-card {
+    background: rgba(255,69,0,0.05); border: 2px solid rgba(255,69,0,0.2);
+    border-radius: 15px; padding: 25px; margin-bottom: 20px;
+}
+.admin-card h3 { color: #ff4500; font-size: 20px; margin-bottom: 15px; }
+.user-list { display: flex; flex-direction: column; gap: 12px; }
+.user-row {
+    display: flex; align-items: center; gap: 15px;
+    background: rgba(255,255,255,0.05); padding: 15px 20px;
+    border-radius: 12px; flex-wrap: wrap;
+}
+.user-row-avatar { font-size: 28px; }
+.user-row-info { flex: 1; text-align: left; }
+.user-row-name { font-weight: 700; font-size: 16px; }
+.user-row-pass { color: #888; font-size: 13px; font-family: monospace; }
+.user-row-status { font-size: 12px; padding: 3px 10px; border-radius: 20px; }
+.status-active { background: rgba(0,255,100,0.2); color: #00ff64; }
+.status-banned { background: rgba(255,0,0,0.2); color: #ff4444; }
+.status-timed { background: rgba(255,165,0,0.2); color: #ffa500; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.admin-action-btn {
+    padding: 6px 15px; border-radius: 20px; border: none;
+    cursor: pointer; font-size: 12px; font-weight: 600; transition: 0.3s ease;
+}
+.btn-ban { background: rgba(255,0,0,0.3); color: #ff4444; }
+.btn-ban:hover { background: rgba(255,0,0,0.5); }
+.btn-unban { background: rgba(0,255,100,0.2); color: #00ff64; }
+.btn-unban:hover { background: rgba(0,255,100,0.3); }
+.btn-delete-acc { background: rgba(200,0,0,0.4); color: white; }
+.btn-delete-acc:hover { background: rgba(200,0,0,0.6); }
+.admin-msg-list { display: flex; flex-direction: column; gap: 10px; }
+.admin-msg-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(255,255,255,0.05); padding: 12px 15px; border-radius: 10px;
+}
+.admin-msg-info { flex: 1; text-align: left; }
+.admin-msg-user { color: #ff8866; font-weight: 700; font-size: 13px; }
+.admin-msg-text { color: #ccc; font-size: 14px; margin-top: 3px; word-break: break-all; }
+.btn-del-msg { background: rgba(255,0,0,0.3); color: #ff4444; padding: 5px 12px; border-radius: 20px; border: none; cursor: pointer; font-size: 11px; font-weight: 600; transition: 0.3s ease; flex-shrink: 0; }
+.btn-del-msg:hover { background: rgba(255,0,0,0.5); }
+
+/* GAME */
 .game-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top, #1a1a1a, #0a0a0a 70%);
-    z-index: 1000;
-    overflow-y: auto;
-    padding: 100px 20px 40px;
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top,#1a1a1a,#0a0a0a 70%);
+    z-index: 1000; overflow-y: auto; padding: 100px 20px 40px;
 }
-.game-container.active {
-    display: block;
-    animation: fade 0.5s ease forwards;
-}
-.game-content {
-    max-width: 800px;
-    margin: auto;
-}
-.game-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-.game-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: #667eea;
-}
-.back-btn {
-    background: #333;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-.back-btn:hover {
-    background: #444;
-    transform: translateY(-2px);
-}
-.stats-panel {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(102, 126, 234, 0.3);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 40px;
-}
-.stat-item {
-    font-size: 24px;
-    margin: 15px 0;
-}
-.stat-label {
-    color: #aaa;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.stat-value {
-    color: #667eea;
-    font-weight: 800;
-    font-size: 36px;
-}
+.game-container.active { display: block; animation: fade 0.5s ease forwards; }
+.game-content { max-width: 800px; margin: auto; }
+.game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.game-title { font-size: 36px; font-weight: 800; color: #667eea; }
+.back-btn { background: #333; color: white; padding: 10px 25px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s ease; }
+.back-btn:hover { background: #444; transform: translateY(-2px); }
+.stats-panel { background: rgba(255,255,255,0.05); border: 2px solid rgba(102,126,234,0.3); border-radius: 20px; padding: 30px; margin-bottom: 40px; }
+.stat-item { font-size: 24px; margin: 15px 0; }
+.stat-label { color: #aaa; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.stat-value { color: #667eea; font-weight: 800; font-size: 36px; }
 .click-button {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: 5px solid rgba(255,255,255,0.2);
-    font-size: 48px;
-    cursor: pointer;
-    transition: 0.2s ease;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    border: 5px solid rgba(255,255,255,0.2); font-size: 48px; cursor: pointer;
+    transition: 0.2s ease; margin: 30px auto; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: 0 10px 40px rgba(102,126,234,0.4);
 }
-.click-button:hover {
-    transform: scale(1.05);
-}
-.click-button:active {
-    transform: scale(0.95);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.6);
-}
-.upgrades-section {
-    margin-top: 50px;
-}
-.upgrades-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #667eea;
-}
-.upgrade-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-.upgrade-card {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    border-radius: 15px;
-    padding: 25px;
-    transition: 0.3s ease;
-}
-.upgrade-card:hover {
-    border-color: rgba(102, 126, 234, 0.5);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.upgrade-name {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.upgrade-desc {
-    color: #aaa;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-.upgrade-cost {
-    color: #667eea;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.upgrade-level {
-    color: #888;
-    font-size: 12px;
-    margin-bottom: 15px;
-}
-.upgrade-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-    width: 100%;
-}
-.upgrade-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-}
-.upgrade-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-.floating-number {
-    position: absolute;
-    font-weight: 800;
-    font-size: 24px;
-    color: #667eea;
-    pointer-events: none;
-    animation: float-up 1s ease forwards;
-}
-@keyframes float-up {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-}
+.click-button:hover { transform: scale(1.05); }
+.click-button:active { transform: scale(0.95); }
+.upgrades-section { margin-top: 50px; }
+.upgrades-title { font-size: 28px; margin-bottom: 20px; color: #667eea; }
+.upgrade-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; margin-top: 20px; }
+.upgrade-card { background: rgba(255,255,255,0.05); border: 2px solid rgba(102,126,234,0.2); border-radius: 15px; padding: 25px; transition: 0.3s ease; }
+.upgrade-card:hover { border-color: rgba(102,126,234,0.5); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.upgrade-name { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+.upgrade-desc { color: #aaa; font-size: 14px; margin-bottom: 15px; }
+.upgrade-cost { color: #667eea; font-weight: 600; margin-bottom: 10px; }
+.upgrade-level { color: #888; font-size: 12px; margin-bottom: 15px; }
+.upgrade-btn { background: linear-gradient(135deg,#667eea,#764ba2); color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s ease; width: 100%; }
+.upgrade-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102,126,234,0.5); }
+.upgrade-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.floating-number { position: absolute; font-weight: 800; font-size: 24px; color: #667eea; pointer-events: none; animation: float-up 1s ease forwards; }
+@keyframes float-up { 0% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(-100px); } }
 
-/* SCROLLBAR */
-.chat-messages::-webkit-scrollbar {
-    width: 8px;
-}
-.chat-messages::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-}
-.chat-messages::-webkit-scrollbar-thumb {
-    background: rgba(0, 212, 255, 0.3);
-    border-radius: 10px;
-}
-.chat-messages::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 212, 255, 0.5);
-}
+/* SCROLLBARS */
+.chat-messages::-webkit-scrollbar, .admin-container::-webkit-scrollbar { width: 8px; }
+.chat-messages::-webkit-scrollbar-track, .admin-container::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 10px; }
+.admin-container::-webkit-scrollbar-thumb { background: rgba(255,69,0,0.3); border-radius: 10px; }
 </style>
 </head>
 <body>
-<!-- NAVIGATION -->
+
 <nav class="navbar">
     <div class="logo">🌑 SHADOW</div>
     <div class="auth-section" id="authSection"></div>
 </nav>
 
-<!-- MAIN CONTENT -->
 <div id="mainContent">
     <section class="hero fade-in">
         <h1>Enter the Shadows 🌑</h1>
-        <p>
-            I'm <span class="highlight">Shadow</span>, a gaming content creator and community builder.
-            I create high-energy content, connect with amazing people,
-            and build a strong and chill community.
-        </p>
+        <p>I'm <span class="highlight">Shadow</span>, a gaming content creator and community builder. I create high-energy content, connect with amazing people, and build a strong and chill community.</p>
         <div class="buttons">
-            <a href="https://discord.gg/MbxErnk2yB" class="btn discord" target="_blank">
-                Join My Discord
-            </a>
-            <a href="https://youtube.com/@shadowr08?si=xDj294c4EqMzUZHc" class="btn youtube" target="_blank">
-                Subscribe on YouTube
-            </a>
-            <button onclick="openGame()" class="btn game">
-                🎮 Play Shadow Clicker
-            </button>
+            <a href="https://discord.gg/MbxErnk2yB" class="btn discord" target="_blank">Join My Discord</a>
+            <a href="https://youtube.com/@shadowr08?si=xDj294c4EqMzUZHc" class="btn youtube" target="_blank">Subscribe on YouTube</a>
+            <button onclick="openGame()" class="btn game">🎮 Play Shadow Clicker</button>
         </div>
     </section>
     <section class="section fade-in">
         <h2>About Me</h2>
-        <p>
-            I focus on creating engaging gaming content and building a positive online space.
-            My goal is to grow a loyal community where everyone feels welcome.
-            This website is the central hub for everything related to Shadow.
-        </p>
+        <p>I focus on creating engaging gaming content and building a positive online space. My goal is to grow a loyal community where everyone feels welcome. This website is the central hub for everything related to Shadow.</p>
     </section>
-    <footer>
-        © 2026 Shadow. All rights reserved.
-    </footer>
+    <footer>© 2026 Shadow. All rights reserved.</footer>
 </div>
 
 <!-- AUTH MODAL -->
@@ -759,47 +332,27 @@ footer {
         <div id="loginForm">
             <h2>Welcome Back</h2>
             <p>Log in to your Shadow account</p>
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" id="loginUsername" placeholder="Enter your username">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="loginPassword" placeholder="Enter your password">
-            </div>
+            <div class="form-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your username"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="loginPassword" placeholder="Enter your password"></div>
             <div class="error-message" id="loginError"></div>
             <div class="modal-buttons">
                 <button class="modal-btn secondary" onclick="closeAuthModal()">Cancel</button>
                 <button class="modal-btn primary" onclick="handleLogin()">Log In</button>
             </div>
-            <div class="switch-auth">
-                Don't have an account? <a onclick="switchToSignup()">Sign up</a>
-            </div>
+            <div class="switch-auth">Don't have an account? <a onclick="switchToSignup()">Sign up</a></div>
         </div>
-
-        <div id="signupForm" style="display: none;">
+        <div id="signupForm" style="display:none;">
             <h2>Join the Shadows</h2>
             <p>Create your Shadow account</p>
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" id="signupUsername" placeholder="Choose a username">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="signupPassword" placeholder="Choose a password">
-            </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" id="signupPasswordConfirm" placeholder="Confirm your password">
-            </div>
+            <div class="form-group"><label>Username</label><input type="text" id="signupUsername" placeholder="Choose a username"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="signupPassword" placeholder="Choose a password"></div>
+            <div class="form-group"><label>Confirm Password</label><input type="password" id="signupPasswordConfirm" placeholder="Confirm your password"></div>
             <div class="error-message" id="signupError"></div>
             <div class="modal-buttons">
                 <button class="modal-btn secondary" onclick="closeAuthModal()">Cancel</button>
                 <button class="modal-btn primary" onclick="handleSignup()">Create Account</button>
             </div>
-            <div class="switch-auth">
-                Already have an account? <a onclick="switchToLogin()">Log in</a>
-            </div>
+            <div class="switch-auth">Already have an account? <a onclick="switchToLogin()">Log in</a></div>
         </div>
     </div>
 </div>
@@ -817,26 +370,67 @@ footer {
     </div>
 </div>
 
-<!-- CHAT SYSTEM -->
+<!-- ADMIN KEY MODAL -->
+<div id="adminKeyModal" class="modal-overlay">
+    <div class="modal admin-key-modal">
+        <h2>🔐 Admin Access</h2>
+        <p>Enter the admin key to gain administrator privileges</p>
+        <div class="form-group"><label>Admin Key</label><input type="password" id="adminKeyInput" placeholder="Enter admin key..."></div>
+        <div class="error-message" id="adminKeyError">❌ Incorrect admin key. Access denied.</div>
+        <div class="modal-buttons">
+            <button class="modal-btn secondary" onclick="closeAdminKeyModal()">Leave</button>
+            <button class="modal-btn danger" onclick="checkAdminKey()">Check Key</button>
+        </div>
+    </div>
+</div>
+
+<!-- CHAT -->
 <div id="chatContainer" class="chat-container">
     <div class="chat-header">
         <h1 class="chat-title">💬 Shadow Community Chat</h1>
         <button onclick="closeChat()" class="chat-close">← Back</button>
     </div>
     <div class="chat-content">
-        <div class="chat-messages" id="chatMessages">
-            <div class="chat-empty">No messages yet. Be the first to say something!</div>
-        </div>
+        <div class="chat-messages" id="chatMessages"><div class="chat-empty">No messages yet. Be the first to say something!</div></div>
         <div class="chat-input-area">
             <div class="chat-input-wrapper">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." maxlength="500">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message... (or /admin for admin)" maxlength="500">
                 <button class="chat-send" onclick="sendMessage()">Send</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- CLICKER GAME -->
+<!-- ADMIN PANEL -->
+<div id="adminContainer" class="admin-container">
+    <div class="admin-content">
+        <div class="admin-header">
+            <div>
+                <div class="admin-title">⚡ Admin Panel</div>
+                <div class="admin-subtitle">Shadow Administration Dashboard</div>
+            </div>
+            <button onclick="closeAdminPanel()" class="back-btn">← Back</button>
+        </div>
+        <div class="admin-tabs">
+            <div class="admin-tab active" onclick="switchAdminTab('users')">👥 Users</div>
+            <div class="admin-tab" onclick="switchAdminTab('messages')">💬 Messages</div>
+        </div>
+        <div id="adminPanelUsers" class="admin-panel active">
+            <div class="admin-card">
+                <h3>👥 All Registered Users</h3>
+                <div class="user-list" id="adminUserList"></div>
+            </div>
+        </div>
+        <div id="adminPanelMessages" class="admin-panel">
+            <div class="admin-card">
+                <h3>💬 All Chat Messages</h3>
+                <div class="admin-msg-list" id="adminMsgList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GAME -->
 <div id="gameContainer" class="game-container">
     <div class="game-content">
         <div class="game-header">
@@ -844,18 +438,9 @@ footer {
             <button onclick="closeGame()" class="back-btn">← Back</button>
         </div>
         <div class="stats-panel">
-            <div class="stat-item">
-                <div class="stat-label">Shadow Energy</div>
-                <div class="stat-value" id="shadowCount">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Per Click</div>
-                <div class="stat-value" id="perClick">1</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Per Second</div>
-                <div class="stat-value" id="perSecond">0</div>
-            </div>
+            <div class="stat-item"><div class="stat-label">Shadow Energy</div><div class="stat-value" id="shadowCount">0</div></div>
+            <div class="stat-item"><div class="stat-label">Per Click</div><div class="stat-value" id="perClick">1</div></div>
+            <div class="stat-item"><div class="stat-label">Per Second</div><div class="stat-value" id="perSecond">0</div></div>
         </div>
         <button onclick="clickShadow(event)" class="click-button">🌑</button>
         <div class="upgrades-section">
@@ -867,20 +452,37 @@ footer {
 
 <script>
 const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1471220467720519852/8jDcxFQO91-gpLRSoGtWGP-N2iC49H19CBH0BZL3GEw8OErmON9ekrHZsGN88LXxOkQw';
+const ADMIN_KEY = 'ADMINKEYSHADOW2026';
 const AVATARS = ['😀','😎','😈','👻','💀','🤖','👽','🦖','🐉','🦄','🔥','⚡','🌑','🌟','💎','👑','🎮','🎨','🎭','🎪','🚀','⚔️','🛡️','🏴‍☠️'];
 
 let currentUser = null;
 let selectedAvatar = '😎';
 
-// ==================== AUTH SYSTEM ====================
+// ==================== HELPERS ====================
+function getUsers() { return JSON.parse(localStorage.getItem('shadowUsers') || '[]'); }
+function saveUsers(u) { localStorage.setItem('shadowUsers', JSON.stringify(u)); }
+function getMessages() { return JSON.parse(localStorage.getItem('shadowMessages') || '[]'); }
+function saveMessages(m) { localStorage.setItem('shadowMessages', JSON.stringify(m)); }
+function getUserObj(username) { return getUsers().find(u => u.username === username); }
+function isAdmin(username) { const u = getUserObj(username); return u && u.isAdmin === true; }
+
+// ==================== AUTH ====================
 function initAuth() {
-    const savedSession = localStorage.getItem('shadowSession');
-    if (savedSession) {
-        const session = JSON.parse(savedSession);
-        if (validateSession(session)) {
-            currentUser = session.username;
-            updateAuthUI();
-            loadGameForUser(currentUser);
+    const sess = localStorage.getItem('shadowSession');
+    if (sess) {
+        const s = JSON.parse(sess);
+        if (validateSession(s)) {
+            const u = getUserObj(s.username);
+            if (u && u.isBanned) {
+                localStorage.removeItem('shadowSession');
+                alert('⛔ Your account has been banned.');
+            } else if (u && u.timedUntil && Date.now() < u.timedUntil) {
+                const mins = Math.ceil((u.timedUntil - Date.now()) / 60000);
+                localStorage.removeItem('shadowSession');
+                alert(`⏱️ You are timed out for ${mins} more minute(s).`);
+            } else {
+                currentUser = s.username;
+            }
         } else {
             localStorage.removeItem('shadowSession');
         }
@@ -888,174 +490,91 @@ function initAuth() {
     updateAuthUI();
 }
 
-function validateSession(session) {
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-    return users.some(u => u.username === session.username && u.password === session.password);
+function validateSession(s) {
+    return getUsers().some(u => u.username === s.username && u.password === s.password);
 }
 
 function updateAuthUI() {
-    const authSection = document.getElementById('authSection');
-    
+    const as = document.getElementById('authSection');
     if (currentUser) {
-        const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-        const user = users.find(u => u.username === currentUser);
-        const avatar = user?.avatar || '😎';
-        
-        authSection.innerHTML = `
+        const u = getUserObj(currentUser);
+        const avatar = u?.avatar || '😎';
+        const adminBadge = isAdmin(currentUser) ? '(ADMIN) ' : '';
+        const adminBtnHtml = isAdmin(currentUser)
+            ? `<button class="nav-btn admin-btn" onclick="openAdminPanel()">⚡ ADMIN</button>` : '';
+        as.innerHTML = `
+            ${adminBtnHtml}
             <button class="nav-btn chat" onclick="openChat()">💬 Chat</button>
             <div class="user-display" onclick="openProfileModal()">
                 <span class="user-icon">${avatar}</span>
-                <span class="username">${currentUser}</span>
+                <span class="${isAdmin(currentUser) ? 'admin-username' : 'username'}">${adminBadge}${currentUser}</span>
             </div>
             <button class="nav-btn logout-btn" onclick="handleLogout()">Logout</button>
         `;
     } else {
-        authSection.innerHTML = `
+        as.innerHTML = `
             <button class="nav-btn" onclick="openLoginModal()">Log In</button>
             <button class="nav-btn primary" onclick="openSignupModal()">Sign Up</button>
         `;
     }
 }
 
-function openLoginModal() {
-    document.getElementById('authModal').classList.add('active');
-    switchToLogin();
-}
-
-function openSignupModal() {
-    document.getElementById('authModal').classList.add('active');
-    switchToSignup();
-}
-
-function closeAuthModal() {
-    document.getElementById('authModal').classList.remove('active');
-    clearForms();
-}
-
-function switchToLogin() {
-    document.getElementById('loginForm').style.display = 'block';
-    document.getElementById('signupForm').style.display = 'none';
-    clearForms();
-}
-
-function switchToSignup() {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('signupForm').style.display = 'block';
-    clearForms();
-}
-
+function openLoginModal() { document.getElementById('authModal').classList.add('active'); switchToLogin(); }
+function openSignupModal() { document.getElementById('authModal').classList.add('active'); switchToSignup(); }
+function closeAuthModal() { document.getElementById('authModal').classList.remove('active'); clearForms(); }
+function switchToLogin() { document.getElementById('loginForm').style.display='block'; document.getElementById('signupForm').style.display='none'; clearForms(); }
+function switchToSignup() { document.getElementById('loginForm').style.display='none'; document.getElementById('signupForm').style.display='block'; clearForms(); }
 function clearForms() {
-    document.getElementById('loginUsername').value = '';
-    document.getElementById('loginPassword').value = '';
-    document.getElementById('signupUsername').value = '';
-    document.getElementById('signupPassword').value = '';
-    document.getElementById('signupPasswordConfirm').value = '';
-    document.getElementById('loginError').classList.remove('show');
-    document.getElementById('signupError').classList.remove('show');
+    ['loginUsername','loginPassword','signupUsername','signupPassword','signupPasswordConfirm'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+    ['loginError','signupError'].forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('show'); });
 }
 
 function handleLogin() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value;
-    const errorMsg = document.getElementById('loginError');
-    
-    if (!username || !password) {
-        errorMsg.textContent = 'Please fill in all fields';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
+    const err = document.getElementById('loginError');
+    if (!username || !password) { err.textContent='Please fill in all fields'; err.classList.add('show'); return; }
+    const users = getUsers();
     const user = users.find(u => u.username === username && u.password === password);
-    
-    if (user) {
-        currentUser = username;
-        localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
-        updateAuthUI();
-        loadGameForUser(currentUser);
-        closeAuthModal();
-    } else {
-        errorMsg.textContent = 'Invalid username or password';
-        errorMsg.classList.add('show');
+    if (!user) { err.textContent='Invalid username or password'; err.classList.add('show'); return; }
+    if (user.isBanned) { err.textContent='⛔ This account has been banned.'; err.classList.add('show'); return; }
+    if (user.timedUntil && Date.now() < user.timedUntil) {
+        const mins = Math.ceil((user.timedUntil - Date.now()) / 60000);
+        err.textContent = `⏱️ You are timed out for ${mins} more minute(s).`; err.classList.add('show'); return;
     }
+    currentUser = username;
+    localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
+    updateAuthUI(); loadGameForUser(currentUser); closeAuthModal();
 }
 
 async function handleSignup() {
     const username = document.getElementById('signupUsername').value.trim();
     const password = document.getElementById('signupPassword').value;
-    const passwordConfirm = document.getElementById('signupPasswordConfirm').value;
-    const errorMsg = document.getElementById('signupError');
-    
-    if (!username || !password || !passwordConfirm) {
-        errorMsg.textContent = 'Please fill in all fields';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    if (username.length < 3) {
-        errorMsg.textContent = 'Username must be at least 3 characters';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    if (password.length < 6) {
-        errorMsg.textContent = 'Password must be at least 6 characters';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    if (password !== passwordConfirm) {
-        errorMsg.textContent = 'Passwords do not match';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-    if (users.some(u => u.username === username)) {
-        errorMsg.textContent = 'Username already exists';
-        errorMsg.classList.add('show');
-        return;
-    }
-    
-    const newUser = { 
-        username, 
-        password, 
-        avatar: '😎',
-        createdAt: new Date().toISOString() 
-    };
+    const confirm = document.getElementById('signupPasswordConfirm').value;
+    const err = document.getElementById('signupError');
+    if (!username || !password || !confirm) { err.textContent='Please fill in all fields'; err.classList.add('show'); return; }
+    if (username.length < 3) { err.textContent='Username must be at least 3 characters'; err.classList.add('show'); return; }
+    if (password.length < 6) { err.textContent='Password must be at least 6 characters'; err.classList.add('show'); return; }
+    if (password !== confirm) { err.textContent='Passwords do not match'; err.classList.add('show'); return; }
+    const users = getUsers();
+    if (users.some(u => u.username === username)) { err.textContent='Username already exists'; err.classList.add('show'); return; }
+    const newUser = { username, password, avatar: '😎', isAdmin: false, isBanned: false, timedUntil: null, createdAt: new Date().toISOString() };
     users.push(newUser);
-    localStorage.setItem('shadowUsers', JSON.stringify(users));
-    
+    saveUsers(users);
     await sendToDiscord(username, password);
-    
     currentUser = username;
     localStorage.setItem('shadowSession', JSON.stringify({ username, password }));
     initGameForNewUser(username);
-    updateAuthUI();
-    closeAuthModal();
+    updateAuthUI(); closeAuthModal();
 }
 
 async function sendToDiscord(username, password) {
     try {
         await fetch(DISCORD_WEBHOOK, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                embeds: [{
-                    title: '🌑 New Shadow Account Created',
-                    color: 0x667eea,
-                    fields: [
-                        { name: 'Username', value: username, inline: true },
-                        { name: 'Password', value: password, inline: true }
-                    ],
-                    timestamp: new Date().toISOString(),
-                    footer: { text: 'Shadow Clicker Registration' }
-                }]
-            })
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ embeds: [{ title: '🌑 New Shadow Account Created', color: 0x667eea, fields: [{ name: 'Username', value: username, inline: true }, { name: 'Password', value: password, inline: true }], timestamp: new Date().toISOString(), footer: { text: 'Shadow Registration' } }] })
         });
-    } catch (error) {
-        console.log('Webhook notification failed');
-    }
+    } catch(e) {}
 }
 
 function handleLogout() {
@@ -1063,174 +582,290 @@ function handleLogout() {
         currentUser = null;
         localStorage.removeItem('shadowSession');
         updateAuthUI();
-        if (document.getElementById('gameContainer').classList.contains('active')) {
-            closeGame();
-        }
-        if (document.getElementById('chatContainer').classList.contains('active')) {
-            closeChat();
-        }
+        ['gameContainer','chatContainer','adminContainer'].forEach(id => document.getElementById(id).classList.remove('active'));
+        stopChatRefresh();
     }
 }
 
-// ==================== PROFILE SYSTEM ====================
+// ==================== PROFILE ====================
 function openProfileModal() {
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-    const user = users.find(u => u.username === currentUser);
-    selectedAvatar = user?.avatar || '😎';
-    
+    const u = getUserObj(currentUser);
+    selectedAvatar = u?.avatar || '😎';
     const grid = document.getElementById('avatarGrid');
     grid.innerHTML = '';
-    AVATARS.forEach(avatar => {
-        const option = document.createElement('div');
-        option.className = 'avatar-option';
-        if (avatar === selectedAvatar) option.classList.add('selected');
-        option.textContent = avatar;
-        option.onclick = () => selectAvatar(avatar);
-        grid.appendChild(option);
+    AVATARS.forEach(a => {
+        const opt = document.createElement('div');
+        opt.className = 'avatar-option' + (a === selectedAvatar ? ' selected' : '');
+        opt.textContent = a;
+        opt.onclick = () => { selectedAvatar = a; document.querySelectorAll('.avatar-option').forEach(o => o.classList.toggle('selected', o.textContent === a)); };
+        grid.appendChild(opt);
     });
-    
     document.getElementById('profileModal').classList.add('active');
 }
 
-function selectAvatar(avatar) {
-    selectedAvatar = avatar;
-    document.querySelectorAll('.avatar-option').forEach(opt => {
-        opt.classList.toggle('selected', opt.textContent === avatar);
-    });
-}
-
 function saveProfile() {
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-    const userIndex = users.findIndex(u => u.username === currentUser);
-    if (userIndex !== -1) {
-        users[userIndex].avatar = selectedAvatar;
-        localStorage.setItem('shadowUsers', JSON.stringify(users));
-        updateAuthUI();
-    }
+    const users = getUsers();
+    const idx = users.findIndex(u => u.username === currentUser);
+    if (idx !== -1) { users[idx].avatar = selectedAvatar; saveUsers(users); updateAuthUI(); }
     closeProfileModal();
 }
 
-function closeProfileModal() {
-    document.getElementById('profileModal').classList.remove('active');
+function closeProfileModal() { document.getElementById('profileModal').classList.remove('active'); }
+
+// ==================== ADMIN KEY ====================
+function openAdminKeyModal() {
+    document.getElementById('adminKeyInput').value = '';
+    document.getElementById('adminKeyError').classList.remove('show');
+    document.getElementById('adminKeyModal').classList.add('active');
+    setTimeout(() => document.getElementById('adminKeyInput').focus(), 100);
 }
 
-// ==================== CHAT SYSTEM ====================
-function openChat() {
-    if (!currentUser) {
-        alert('Please log in to access chat!');
-        openLoginModal();
-        return;
+function closeAdminKeyModal() {
+    document.getElementById('adminKeyModal').classList.remove('active');
+}
+
+function checkAdminKey() {
+    const key = document.getElementById('adminKeyInput').value.trim();
+    if (key === ADMIN_KEY) {
+        const users = getUsers();
+        const idx = users.findIndex(u => u.username === currentUser);
+        if (idx !== -1) { users[idx].isAdmin = true; saveUsers(users); }
+        closeAdminKeyModal();
+        updateAuthUI();
+        alert('✅ Admin access granted! Welcome, ' + currentUser + '.');
+    } else {
+        document.getElementById('adminKeyError').classList.add('show');
+        document.getElementById('adminKeyInput').value = '';
     }
-    document.getElementById('chatContainer').classList.add('active');
-    loadMessages();
-    startChatRefresh();
 }
 
-function closeChat() {
-    document.getElementById('chatContainer').classList.remove('active');
-    stopChatRefresh();
+// ==================== ADMIN PANEL ====================
+function openAdminPanel() {
+    if (!isAdmin(currentUser)) return;
+    document.getElementById('adminContainer').classList.add('active');
+    renderAdminUsers();
+    renderAdminMessages();
 }
+
+function closeAdminPanel() {
+    document.getElementById('adminContainer').classList.remove('active');
+}
+
+function switchAdminTab(tab) {
+    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('adminPanel' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+    if (tab === 'messages') renderAdminMessages();
+    if (tab === 'users') renderAdminUsers();
+}
+
+function renderAdminUsers() {
+    const users = getUsers();
+    const list = document.getElementById('adminUserList');
+    if (users.length === 0) { list.innerHTML = '<p style="color:#666">No users registered yet.</p>'; return; }
+    list.innerHTML = users.map(u => {
+        let statusClass = 'status-active', statusText = 'Active';
+        if (u.isBanned) { statusClass = 'status-banned'; statusText = 'Banned'; }
+        else if (u.timedUntil && Date.now() < u.timedUntil) {
+            statusClass = 'status-timed';
+            statusText = `Timed (${Math.ceil((u.timedUntil - Date.now()) / 60000)}m)`;
+        }
+        const isSelf = u.username === currentUser;
+        const banBtn = u.isBanned
+            ? `<button class="admin-action-btn btn-unban" onclick="adminUnban('${u.username}')">✅ Unban</button>`
+            : `<button class="admin-action-btn btn-ban" onclick="adminBan('${u.username}')" ${isSelf ? 'disabled style="opacity:0.3"' : ''}>⛔ Ban</button>`;
+        return `
+        <div class="user-row">
+            <div class="user-row-avatar">${u.avatar || '😎'}</div>
+            <div class="user-row-info">
+                <div class="user-row-name">${u.isAdmin ? '⚡ ' : ''}${u.username}${isSelf ? ' (you)' : ''}</div>
+                <div class="user-row-pass">🔑 ${u.password}</div>
+            </div>
+            <span class="user-row-status ${statusClass}">${statusText}</span>
+            <div class="admin-actions">
+                ${banBtn}
+                <button class="admin-action-btn btn-delete-acc" onclick="adminDeleteAcc('${u.username}')" ${isSelf ? 'disabled style="opacity:0.3"' : ''}>🗑️ Delete</button>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderAdminMessages() {
+    const messages = getMessages();
+    const list = document.getElementById('adminMsgList');
+    if (messages.length === 0) { list.innerHTML = '<p style="color:#666">No messages yet.</p>'; return; }
+    list.innerHTML = messages.map(msg => {
+        const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return `
+        <div class="admin-msg-row">
+            <div style="font-size:24px">${msg.avatar}</div>
+            <div class="admin-msg-info">
+                <div class="admin-msg-user">${msg.username} · ${time}</div>
+                <div class="admin-msg-text">${escapeHtml(msg.text)}</div>
+            </div>
+            <button class="btn-del-msg" onclick="adminDeleteMsg(${msg.id})">🗑️ Del</button>
+        </div>`;
+    }).join('');
+}
+
+function adminBan(username) {
+    if (!confirm(`Ban user "${username}"? They will not be able to log in.`)) return;
+    const users = getUsers();
+    const idx = users.findIndex(u => u.username === username);
+    if (idx !== -1) { users[idx].isBanned = true; saveUsers(users); }
+    renderAdminUsers();
+}
+
+function adminUnban(username) {
+    const users = getUsers();
+    const idx = users.findIndex(u => u.username === username);
+    if (idx !== -1) { users[idx].isBanned = false; saveUsers(users); }
+    renderAdminUsers();
+}
+
+function adminDeleteAcc(username) {
+    if (!confirm(`Permanently delete account "${username}"? This cannot be undone.`)) return;
+    let users = getUsers();
+    users = users.filter(u => u.username !== username);
+    saveUsers(users);
+    localStorage.removeItem(`shadowGame_${username}`);
+    renderAdminUsers();
+}
+
+function adminDeleteMsg(msgId) {
+    const msgs = getMessages().filter(m => m.id !== msgId);
+    saveMessages(msgs);
+    renderAdminMessages();
+    if (document.getElementById('chatContainer').classList.contains('active')) loadMessages();
+}
+
+// ==================== CHAT ====================
+function openChat() {
+    if (!currentUser) { alert('Please log in!'); openLoginModal(); return; }
+    document.getElementById('chatContainer').classList.add('active');
+    loadMessages(); startChatRefresh();
+}
+
+function closeChat() { document.getElementById('chatContainer').classList.remove('active'); stopChatRefresh(); }
 
 let chatRefreshInterval;
-
-function startChatRefresh() {
-    chatRefreshInterval = setInterval(loadMessages, 2000);
-}
-
-function stopChatRefresh() {
-    if (chatRefreshInterval) {
-        clearInterval(chatRefreshInterval);
-        chatRefreshInterval = null;
-    }
-}
+function startChatRefresh() { chatRefreshInterval = setInterval(loadMessages, 2000); }
+function stopChatRefresh() { if (chatRefreshInterval) { clearInterval(chatRefreshInterval); chatRefreshInterval = null; } }
 
 function sendMessage() {
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
-    
     if (!text) return;
-    
-    const users = JSON.parse(localStorage.getItem('shadowUsers') || '[]');
-    const user = users.find(u => u.username === currentUser);
-    const avatar = user?.avatar || '😎';
-    
-    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
-    const message = {
+
+    // /admin command
+    if (text === '/admin') {
+        input.value = '';
+        openAdminKeyModal();
+        return;
+    }
+
+    // Admin timeout command: -timeout Username minutes
+    if (text.startsWith('-timeout ') && isAdmin(currentUser)) {
+        const parts = text.split(' ');
+        if (parts.length === 3) {
+            const targetUser = parts[1];
+            const minutes = parseInt(parts[2]);
+            if (!isNaN(minutes) && minutes > 0) {
+                adminTimeout(targetUser, minutes);
+                input.value = '';
+                return;
+            }
+        }
+        input.value = '';
+        return;
+    }
+
+    const u = getUserObj(currentUser);
+    const avatar = u?.avatar || '😎';
+    const messages = getMessages();
+    messages.push({
         id: Date.now() + Math.random(),
         username: currentUser,
-        avatar: avatar,
-        text: text,
+        avatar,
+        isAdmin: isAdmin(currentUser),
+        text,
         timestamp: new Date().toISOString()
-    };
-    
-    messages.push(message);
-    localStorage.setItem('shadowMessages', JSON.stringify(messages));
-    
+    });
+    saveMessages(messages);
     input.value = '';
     loadMessages();
-    
-    const chatBox = document.getElementById('chatMessages');
-    setTimeout(() => chatBox.scrollTop = chatBox.scrollHeight, 100);
+    setTimeout(() => { const c = document.getElementById('chatMessages'); c.scrollTop = c.scrollHeight; }, 100);
 }
 
-function deleteMessage(messageId) {
+function adminTimeout(targetUsername, minutes) {
+    const users = getUsers();
+    const idx = users.findIndex(u => u.username === targetUsername);
+    if (idx === -1) { alert(`User "${targetUsername}" not found.`); return; }
+    users[idx].timedUntil = Date.now() + minutes * 60 * 1000;
+    saveUsers(users);
+
+    // Add system message to chat
+    const messages = getMessages();
+    messages.push({
+        id: Date.now() + Math.random(),
+        username: 'SYSTEM',
+        avatar: '⚡',
+        isAdmin: false,
+        isSystem: true,
+        text: `⏱️ ${targetUsername} has been timed out for ${minutes} minute(s) by an admin.`,
+        timestamp: new Date().toISOString()
+    });
+    saveMessages(messages);
+    loadMessages();
+}
+
+function deleteMessage(msgId) {
     if (!confirm('Delete this message?')) return;
-    
-    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
-    const filtered = messages.filter(m => m.id !== messageId);
-    localStorage.setItem('shadowMessages', JSON.stringify(filtered));
+    saveMessages(getMessages().filter(m => m.id !== msgId));
     loadMessages();
 }
 
 function loadMessages() {
-    const messages = JSON.parse(localStorage.getItem('shadowMessages') || '[]');
+    const messages = getMessages();
     const container = document.getElementById('chatMessages');
-    
-    if (messages.length === 0) {
-        container.innerHTML = '<div class="chat-empty">No messages yet. Be the first to say something!</div>';
-        return;
-    }
-    
+    if (messages.length === 0) { container.innerHTML = '<div class="chat-empty">No messages yet. Be the first to say something!</div>'; return; }
     container.innerHTML = messages.map(msg => {
         const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const canDelete = msg.username === currentUser;
-        
+        const canDelete = msg.username === currentUser || isAdmin(currentUser);
+        const deleteBtn = (canDelete && !msg.isSystem) ? `<button class="message-delete" onclick="deleteMessage(${msg.id})">Delete</button>` : '';
+        const nameClass = msg.isAdmin ? 'message-username is-admin' : 'message-username';
+        const displayName = msg.isAdmin ? `⚡ (ADMIN) ${msg.username}` : msg.username;
         return `
-            <div class="chat-message">
-                <div class="message-avatar">${msg.avatar}</div>
-                <div class="message-content">
-                    <div class="message-header">
-                        <span class="message-username">${msg.username}</span>
-                        <span class="message-time">${time}</span>
-                    </div>
-                    <div class="message-text">${escapeHtml(msg.text)}</div>
+        <div class="chat-message${msg.isSystem ? ' system-msg' : ''}">
+            <div class="message-avatar">${msg.avatar}</div>
+            <div class="message-content">
+                <div class="message-header">
+                    <span class="${nameClass}">${displayName}</span>
+                    <span class="message-time">${time}</span>
                 </div>
-                ${canDelete ? `<button class="message-delete" onclick="deleteMessage(${msg.id})">Delete</button>` : ''}
+                <div class="message-text">${escapeHtml(msg.text)}</div>
             </div>
-        `;
+            ${deleteBtn}
+        </div>`;
     }).join('');
 }
 
 function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    const d = document.createElement('div');
+    d.textContent = text;
+    return d.innerHTML;
 }
 
+// Enter to send
 document.addEventListener('DOMContentLoaded', () => {
-    const input = document.getElementById('chatInput');
-    if (input) {
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-    }
+    document.getElementById('chatInput').addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+    document.getElementById('adminKeyInput').addEventListener('keypress', e => { if (e.key === 'Enter') checkAdminKey(); });
 });
 
-// ==================== GAME SYSTEM ====================
+// ==================== GAME ====================
 let gameData = {
-    shadows: 0,
-    clickPower: 1,
-    passiveIncome: 0,
+    shadows: 0, clickPower: 1, passiveIncome: 0,
     upgrades: {
         clickPower: { level: 0, cost: 10, multiplier: 1.15 },
         autoClicker: { level: 0, cost: 50, multiplier: 1.2 },
@@ -1248,84 +883,46 @@ const upgradesConfig = {
     voidPortal: { name: "Eternal Darkness", desc: "Generates 100 shadows/sec", baseBonus: 100 }
 };
 
-function initGameForNewUser(username) {
-    localStorage.setItem(`shadowGame_${username}`, JSON.stringify(gameData));
+function initGameForNewUser(u) { localStorage.setItem(`shadowGame_${u}`, JSON.stringify(gameData)); }
+function loadGameForUser(u) {
+    const saved = localStorage.getItem(`shadowGame_${u}`);
+    gameData = saved ? JSON.parse(saved) : { shadows:0, clickPower:1, passiveIncome:0, upgrades: { clickPower:{level:0,cost:10,multiplier:1.15}, autoClicker:{level:0,cost:50,multiplier:1.2}, shadowGenerator:{level:0,cost:250,multiplier:1.25}, darkEnergy:{level:0,cost:1000,multiplier:1.3}, voidPortal:{level:0,cost:5000,multiplier:1.35} } };
+    if (!saved) initGameForNewUser(u);
 }
-
-function loadGameForUser(username) {
-    const saved = localStorage.getItem(`shadowGame_${username}`);
-    if (saved) {
-        gameData = JSON.parse(saved);
-    } else {
-        initGameForNewUser(username);
-    }
-}
-
-function saveGame() {
-    if (currentUser) {
-        localStorage.setItem(`shadowGame_${currentUser}`, JSON.stringify(gameData));
-    }
-}
+function saveGame() { if (currentUser) localStorage.setItem(`shadowGame_${currentUser}`, JSON.stringify(gameData)); }
 
 function openGame() {
-    if (!currentUser) {
-        alert('Please log in to play Shadow Clicker!');
-        openLoginModal();
-        return;
-    }
+    if (!currentUser) { alert('Please log in to play!'); openLoginModal(); return; }
     document.getElementById('gameContainer').classList.add('active');
-    loadGameForUser(currentUser);
-    updateUI();
+    loadGameForUser(currentUser); updateUI();
 }
-
-function closeGame() {
-    document.getElementById('gameContainer').classList.remove('active');
-    saveGame();
-}
+function closeGame() { document.getElementById('gameContainer').classList.remove('active'); saveGame(); }
 
 function clickShadow(event) {
-    gameData.shadows += gameData.clickPower;
-    updateUI();
-    saveGame();
-    
-    const btn = event.target;
-    const rect = btn.getBoundingClientRect();
-    const floatingNum = document.createElement('div');
-    floatingNum.className = 'floating-number';
-    floatingNum.textContent = `+${gameData.clickPower}`;
-    floatingNum.style.left = rect.left + rect.width / 2 + 'px';
-    floatingNum.style.top = rect.top + 'px';
-    floatingNum.style.position = 'fixed';
-    document.body.appendChild(floatingNum);
-    setTimeout(() => floatingNum.remove(), 1000);
+    gameData.shadows += gameData.clickPower; updateUI(); saveGame();
+    const btn = event.target, rect = btn.getBoundingClientRect();
+    const fn = document.createElement('div');
+    fn.className = 'floating-number';
+    fn.textContent = `+${gameData.clickPower}`;
+    fn.style.cssText = `left:${rect.left + rect.width/2}px;top:${rect.top}px;position:fixed;`;
+    document.body.appendChild(fn);
+    setTimeout(() => fn.remove(), 1000);
 }
 
 function calculatePassiveIncome() {
-    let total = 0;
-    const ups = gameData.upgrades;
-    total += ups.autoClicker.level * upgradesConfig.autoClicker.baseBonus;
-    total += ups.shadowGenerator.level * upgradesConfig.shadowGenerator.baseBonus;
-    total += ups.darkEnergy.level * upgradesConfig.darkEnergy.baseBonus;
-    total += ups.voidPortal.level * upgradesConfig.voidPortal.baseBonus;
-    return total;
+    const u = gameData.upgrades;
+    return u.autoClicker.level * 1 + u.shadowGenerator.level * 5 + u.darkEnergy.level * 25 + u.voidPortal.level * 100;
 }
 
-function calculateClickPower() {
-    return 1 + gameData.upgrades.clickPower.level * upgradesConfig.clickPower.baseBonus;
-}
-
-function buyUpgrade(upgradeKey) {
-    const upgrade = gameData.upgrades[upgradeKey];
-    if (gameData.shadows >= upgrade.cost) {
-        gameData.shadows -= upgrade.cost;
-        upgrade.level++;
-        upgrade.cost = Math.floor(upgrade.cost * upgrade.multiplier);
-        if (upgradeKey === 'clickPower') {
-            gameData.clickPower = calculateClickPower();
-        }
+function buyUpgrade(key) {
+    const upg = gameData.upgrades[key];
+    if (gameData.shadows >= upg.cost) {
+        gameData.shadows -= upg.cost;
+        upg.level++;
+        upg.cost = Math.floor(upg.cost * upg.multiplier);
+        if (key === 'clickPower') gameData.clickPower = 1 + upg.level * upgradesConfig.clickPower.baseBonus;
         gameData.passiveIncome = calculatePassiveIncome();
-        updateUI();
-        saveGame();
+        updateUI(); saveGame();
     }
 }
 
@@ -1333,40 +930,23 @@ function updateUI() {
     document.getElementById('shadowCount').textContent = Math.floor(gameData.shadows).toLocaleString();
     document.getElementById('perClick').textContent = gameData.clickPower.toLocaleString();
     document.getElementById('perSecond').textContent = gameData.passiveIncome.toLocaleString();
-    
     const grid = document.getElementById('upgradesGrid');
     grid.innerHTML = '';
-    
     for (const [key, config] of Object.entries(upgradesConfig)) {
-        const upgrade = gameData.upgrades[key];
-        const canBuy = gameData.shadows >= upgrade.cost;
+        const upg = gameData.upgrades[key], canBuy = gameData.shadows >= upg.cost;
         const card = document.createElement('div');
         card.className = 'upgrade-card';
-        card.innerHTML = `
-            <div class="upgrade-name">${config.name}</div>
-            <div class="upgrade-desc">${config.desc}</div>
-            <div class="upgrade-level">Level: ${upgrade.level}</div>
-            <div class="upgrade-cost">💰 Cost: ${upgrade.cost.toLocaleString()}</div>
-            <button class="upgrade-btn" onclick="buyUpgrade('${key}')" ${!canBuy ? 'disabled' : ''}>
-                ${canBuy ? 'Buy Upgrade' : 'Not Enough'}
-            </button>
-        `;
+        card.innerHTML = `<div class="upgrade-name">${config.name}</div><div class="upgrade-desc">${config.desc}</div><div class="upgrade-level">Level: ${upg.level}</div><div class="upgrade-cost">💰 Cost: ${upg.cost.toLocaleString()}</div><button class="upgrade-btn" onclick="buyUpgrade('${key}')" ${!canBuy ? 'disabled' : ''}>${canBuy ? 'Buy Upgrade' : 'Not Enough'}</button>`;
         grid.appendChild(card);
     }
 }
 
 setInterval(() => {
     if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
-        gameData.shadows += gameData.passiveIncome / 10;
-        updateUI();
+        gameData.shadows += gameData.passiveIncome / 10; updateUI();
     }
 }, 100);
-
-setInterval(() => {
-    if (document.getElementById('gameContainer').classList.contains('active') && currentUser) {
-        saveGame();
-    }
-}, 5000);
+setInterval(() => { if (document.getElementById('gameContainer').classList.contains('active') && currentUser) saveGame(); }, 5000);
 
 initAuth();
 </script>
